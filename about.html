@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Neue</title>
+    <link rel="stylesheet" href="assets/css/about_style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header" role="banner">
+        <a href="#home" class="logo">Neue.</a>
+        
+        <i class="bx bx-menu" id="menu-icon"></i>
+        
+        <nav class="navbar" role="navigation">
+            <a href="home.html" >Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="#services">Services</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="header-buttons">
+            <button type="button" class="login">Login</button>
+            <button type="button" class="signup">Sign up</button>
+        </div>
+    </header>
+
+
+
+    <main>
+        <section class="content-section">
+            <div class="container">
+                <img src="assets/images/about.png" alt="Sample Image" class="responsive-image">
+                <div class="text-content">
+                    <h2 class="about_heading" >What we're all about</h2>
+                    <p>Neue is an online platform dedicated to keeping art enthusiasts, philosophers, and intellectuals up to date with the latest developments in art, philosophy, and culture. Featuring a curated selection of articles, essays, and interactive content, Neue explores contemporary movements, classic philosophical debates, and the evolving role of art in society.</p>
+                    <p>With in-depth critiques, interviews with thought leaders, and multimedia presentations, Neue fosters thoughtful dialogue and intellectual conversation. The platform connects a global audience eager to stay informed and inspired by the worlds of art and philosophy, offering fresh perspectives on timeless questions.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="interactive-container">
+              <h2 class="section-header">The Team</h2>
+              <p class="section-description">Meet the brains behind this website.</p>
+              <div class="image-box-container">
+                <div class="image-box">
+                  <img src="assets/images/Aguilar.png" alt="person 1">
+                  <span class="box-text">Frank Ceamon Aguilar</span>
+                </div>
+                <div class="image-box">
+                  <img src="assets/images/Arceo.jpg" alt="person 2">
+                  <span class="box-text">Enri Louie Arceo</span>
+                </div>
+                <div class="image-box">
+                  <img src="assets/images/Balane.jpg" alt="person 3">
+                  <span class="box-text">Ezra Nhiez Balane</span>
+                </div>
+                <div class="image-box">
+                  <img src="assets/images/Mendoza.jpg" alt="person 4">
+                  <span class="box-text">Karlos Nicolas Mendoza</span>
+                </div>
+              </div>
+              <button class="cta-button">Join us</button>
+          </div>
+          
+    </main>
+
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+            <a href="#"><i class='bx bxl-facebook-square'></i></a>
+            <a href="#"><i class='bx bxl-youtube'></i></a>
+        </div>
+
+        <p class="newsletter">Subscribe to our newsletter and connect with us on other social media platforms!
+        </p>
+        
+            <ul class="list">
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Privacy policy</a></li>
+            </ul>
+        
+        <p class="copyright">Created by DMIA Students ©2024 | All rights reserved</p>
+    
+    </footer>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            console.log('Form submitted');
+        });
+
+
+        document.getElementById('menu-icon').addEventListener('click', function() {
+            const nav = document.getElementById('primary-navigation');
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !expanded);
+            nav.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

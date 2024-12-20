@@ -1,0 +1,472 @@
+@font-face {
+    font-family: "Neue Regrade";
+    src: url("fonts/NeueRegradeVariable.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Neue Regrade-Semibold";
+    src: url("fonts/NeueRegradeSemibold.otf") format("opentype");
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Neue Regrade-Italic";
+    src: url("fonts/NeueRegradeRegularItalic.otf") format("opentype");
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Neue Regrade-Light";
+    src: url("fonts/Neue-Regrade-Light.otf") format("opentype");
+    font-weight: 300;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    scroll-behavior: smooth;
+    font-family: "Neue Regrade";
+}
+
+:root {
+    --brand-color: #004FC6;
+    --brand-color-2: #0468BF;
+    --contrast-color: #FE6433;
+    --dark: #262123;
+    --light: #f2f2f2;
+    --light-grey: #D9D9D9;
+    --font-size-base: 1.6rem;
+    --font-size-large: 2rem;
+    --font-size-xlarge: 4rem;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--light);
+    min-height: auto;
+    width: 100%;
+    margin: 0 auto;
+    font-family: "Neue Regrade", sans-serif;
+    line-height: 1.5;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 9%;
+    background-color: var(--light-grey);
+    backdrop-filter: blur(1rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.logo {
+    font-family: "Neue Regrade";
+    color: var(--brand-color);
+    font-size: 3rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.navbar a {
+    font-size: var(--font-size-base);
+    color: var(--dark);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+    border-bottom: 0.3rem solid transparent;
+    display: inline-block;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--brand-color);
+    border-bottom: 0.3rem solid var(--brand-color);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--brand-color);
+    display: none;
+}
+
+.login {
+    font-weight: 600;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+    background-color: var(--light);
+    color: var(--brand-color);
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.login:hover {
+    background: var(--brand-color);
+    color: var(--light);
+    transform: scale(1.03);
+}
+
+.signup {
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-left: 0.4375rem;
+    border-radius: 3rem;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.signup:hover {
+    background: var(--contrast-color);
+    color: var(--light);
+    transform: scale(1.03);
+}
+
+section {
+    min-height: 100vh;
+}
+
+.body_container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8rem;
+}
+
+/*---------------------------------------------*/
+
+.content-section {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    align-items: center; /* Vertically centers the items */
+    justify-content: center; /* Horizontally centers the items */
+    background-color: #ffffff; /* Light blue background */
+    padding: 20px;
+    width: 100%;
+    flex-wrap: wrap; /* Ensure elements can wrap on smaller screens */
+}
+
+.responsive-image {
+    width: 500px; /* Keeps the image at a fixed width */
+    height: 500px; /* Set a fixed height for the image */
+    object-fit: cover; /* Ensures the image fills the box and maintains its aspect ratio */
+    flex-shrink: 0; /* Prevents the image from shrinking */
+    margin-right: 20px; /* Space between image and text */
+    margin-top: 60px; /* Add top margin to push the image down */
+    z-index: 1; /* Ensure the image stays above other content */
+}
+
+.text-content {
+    max-width: 500px;
+}
+
+.text-content h2 {
+    color: var(--contrast-color);
+    font-size: var(--font-size-xlarge);
+    margin-bottom: 15px;
+}
+
+.text-content p {
+    margin-bottom: 10px;
+    font-size: var(--font-size-large);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center; /* Center them horizontally */
+    }
+
+    .responsive-image {
+        margin-top: 150px; /* Increase the top margin on smaller screens */
+        margin-right: 0; /* Remove right margin when stacked */
+        margin-bottom: 20px; /* Add space between image and text */
+    }
+
+    /* Consolidated text scaling for smaller screens */
+    .text-content h2,
+    .text-content p {
+        font-size: calc(var(--font-size-base) + 1rem); /* Scales up text slightly on smaller screens */
+    }
+}
+
+/*---------------------------------------------*/
+.interactive-container {
+    background-color: var(--brand-color); /* Sky blue fill */
+    border-radius: 15px; /* Rounded corners */
+    padding: 30px 20px; /* Spacing around content */
+    margin: 20px auto; /* Center container */
+    width: 90%; /* Make container responsive */
+    max-width: 1200px; /* Ensure enough width for image boxes */
+    display: grid;
+    grid-template-rows: auto auto 1fr auto; /* Rows for header, description, image boxes, button */
+    row-gap: 30px; /* Space between rows */
+    height: auto; /* Allow container to size according to content */
+}
+
+.section-header {
+    color: var(--light);
+    font-size: var(--font-size-xlarge); /* Apply xlarge for h2 */
+    margin-bottom: 0;
+}
+
+.section-description {
+    font-size: var(--font-size-large); /* Apply large for paragraph */
+    margin-bottom: 0;
+    color: var(--light);
+}
+
+.image-box-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+}
+
+.image-box {
+    width: 250px; /* Increased size */
+    aspect-ratio: 1 / 1; /* Ensures square shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden; /* Ensures images don't overflow the box */
+    transition: background-color 0.5s ease;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill the box proportionally */
+    display: block;
+    transition: opacity 0.3s ease; /* Smooth fade when hovering */
+}
+
+.image-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--brand-color); /* Adjust to your preferred color */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition for overlay */
+    z-index: 1; /* Ensure it sits above the image */
+}
+
+.image-box:hover::before {
+    opacity: 0.9; /* Show overlay with 90% opacity */
+}
+
+.image-box:hover img {
+    opacity: 0.5; /* Slightly dim the image when hovering */
+}
+
+/* Text inside image box */
+.box-text {
+    position: absolute;
+    opacity: 0; /* Initially hidden */
+    color: var(--light);
+    font-size: var(--font-size-large);
+    transition: opacity 0.5s ease; /* Smooth fade-in transition */
+    z-index: 2; /* Ensure text appears above the overlay */
+}
+
+.image-box:hover .box-text {
+    opacity: 1; /* Text fades in when hovering */
+}
+
+.cta-button {
+    padding: 15px 40px; /* Larger padding for better proportion */
+    font-size: 1.5em; /* Larger font size to match the image boxes */
+    color: var(--brand-color);
+    background-color: var(--light-grey);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto;
+    justify-self: center; /* Center button within grid */
+}
+
+.cta-button:hover {
+    color: var(--light);
+    background-color: var(--contrast-color);
+    transform: scale(1.05); /* Slightly enlarges on hover for emphasis */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .image-box-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-box {
+        width: 80%; /* Larger for smaller screens */
+        max-width: 300px;
+    }
+}
+
+/*---------------------------------------------*/
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: var(--dark);
+}
+
+.footer .social-icons {
+    text-align: center;
+    padding-bottom: 25px;
+    color: var(--light);
+}
+
+.footer .social-icons a {
+    font-size: 25px;
+    color: var(--light-grey);
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    display: inline-flex;
+    text-align: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.footer .social-icons a:hover {
+    transform: scale(1.2) translateY(-5px);
+    color: var(--contrast-color);
+}
+
+.footer ul {
+    margin-top: 1rem;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.footer ul li a {
+    color: var(--light-grey);
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+
+.footer ul li a:hover {
+    color: var(--contrast-color);
+    border-bottom: 3px solid var(--contrast-color);
+}
+
+.footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.footer .copyright {
+    margin-top: 6rem;
+    text-align: center;
+    font-size: 16px;
+    color: var(--light-grey);
+}
+
+.footer .newsletter {
+    color: var(--light-grey);
+    margin-top: 0;
+    padding: 0;
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .img1, .img2 {
+        width: 100vw;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        flex-direction: row;
+    }
+    .body_container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .nav_bar ul {
+        flex-direction: row;
+    }
+
+    .header_buttons {
+        flex-direction: row;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 6vw;
+    }
+    .nav_bar ul li a, .login, .signup {
+        font-size: 1.5vw;
+    }
+    .item, .banner {
+        font-size: 6vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 8vw;
+    }
+    .nav_bar ul li a, .login, .signup {
+        font-size: 3vw;
+    }
+    .item, .banner {
+        font-size: 8vw;
+    }
+}
